@@ -1,7 +1,9 @@
 # Define the UI function for importing data
 importDataUI <- function(id) {
   ns <- NS(id)
-  tagList(tabBox(
+  tagList(div(
+    id = "Welcome",
+    tabBox(
     width = FALSE,
     # Read FASTQ data Panel
     tabPanel(
@@ -10,7 +12,7 @@ importDataUI <- function(id) {
       value = "tab-readData",
 
       # Main application title
-      titlePanel("Set Up Your Data to Start"),
+      titlePanel("Getting Started: Data Setup !"),
       hr(),
       # Sidebar layout with a help button and other inputs
       sidebarLayout(
@@ -49,7 +51,7 @@ importDataUI <- function(id) {
         mainPanel(
           # Output panel for displaying results (placeholder)
           # Help button
-          actionButton(ns("help"), " Help ", icon("circle-question"), style = "color: #ffffff; background-color: #0092AC; border-color: #2e6da4"),
+          actionButton(ns("help_data_setup"), " Help ", icon("circle-question"), style = "color: #ffffff; background-color: #0092AC; border-color: #2e6da4"),
           hr(),
           box(
             width = NULL,
@@ -139,14 +141,21 @@ importDataUI <- function(id) {
         )
       )
     )
-  ))
+  ) )
+  )
 
 }
 
 # Define the server function for uploading data
 importDataServer <- function(input, output, session) {
   ns <- session$ns
-
+  help_datasetup <- read.delim(system.file("extdata", "help_datasetup.txt", package = "SeqExpressionAnalyser"), sep = ";", stringsAsFactors = FALSE)
+  #Help button
+  observeEvent(input$help_data_setup, {
+    introjs(session,
+            options = list(steps = help_datasetup)
+    )
+  })
   # Reactive function to retrieve metadata
   get_metadata <- reactive({
     if (is.null(input$input_metadata)) {
@@ -295,9 +304,8 @@ importDataServer <- function(input, output, session) {
     if (is.null(get_metadata()) || is.null(reactive_result())) {
       return(data.frame(Message = " Please upload your FASTQ files to begin the analysis."))
     }
-    datatable(as.data.frame(perFileInformation(reactive_result())),options = list(scroll = TRUE, autoWidth = TRUE))
+    DT::datatable(as.data.frame(perFileInformation(reactive_result())),options = list(scroll = TRUE))
   })
-
   fileChoices <- reactive({
     if (is.null(reactive_result())) {
       return(c("None"))
@@ -342,6 +350,8 @@ importDataServer <- function(input, output, session) {
     result <- presentation_functions[[selectedPresentation]](reactive_result()[selectedFile])
     DT::datatable(as.data.frame(result), options = list(scroll = TRUE))
   })
+
+
 
   return(reactive_result)
 }

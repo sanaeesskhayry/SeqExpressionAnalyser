@@ -19,4 +19,5 @@ Imports:
     shinyWidgets,
     plotly,
     ggplotify,
-    ggplot2
+    ggplot2,
+    QuasR

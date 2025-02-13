@@ -47,12 +47,14 @@ qualityControlUI <- function(id) {
           ))
         )
       )),
-      actionButton(
-        ns('quality_report'),
-        " Upload FASTQ Files",
-        icon("upload"),
-        style = "color: #ffffff; background-color: #0092AC; border-color: #2e6da4"
-      ),
+      #actionButton(
+        #ns('quality_report'),
+        #" Export quality report",
+       # icon("upload"),
+      #  style = "color: #ffffff; background-color: #0092AC; border-color: #2e6da4"
+     # ),
+     downloadButton(ns("download_data"), "Export quality report", style = "color: #ffffff; background-color: #0092AC; border-color: #2e6da4"),
+
       textOutput(ns("qualityReport")),
       br(),
       tabBox(

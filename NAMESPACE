@@ -2,10 +2,13 @@
 
 export(runAnalyser)
 import(DT)
+import(QuasR)
 import(Rqc)
+import(Rsubread)
 import(ggplot2)
 import(ggplotify)
 import(plotly)
+import(rintrojs)
 import(shiny)
 import(shinyWidgets)
 import(shinydashboard)

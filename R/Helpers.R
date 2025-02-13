@@ -12,13 +12,13 @@ footer <- function() {
       class = "foot-inner",
       list(
         # hr(),
-        "ideal is a project developed by Federico Marini in the Bioinformatics division of the ",
-        tags$a(href = "http://www.unimedizin-mainz.de/imbei", "IMBEI"),
-        "- Institute for Medical Biostatistics, Epidemiology and Informatics", br(),
-        "License: ", tags$a(href = "https://opensource.org/licenses/MIT", "MIT"), br(),
+        "SeqExpressionAnalyzer is a project developed by Sanae Esskhayry in department of Medical Genetics and Oncogenetics, Mohammed VI University Hospital Center",
+        tags$a(href = "https://fmpt.ac.ma/website/", "FMPT"),
+        "-  Faculty of Medicine and Pharmacy, Abdelmalek Essaadi University, Tangier, Morocco", br(),
+        "License: ", tags$a(href = "https://opensource.org/licenses/MIT", "GPL-3.0"), br(),
 
-        "Development of the ideal package is on ",
-        tags$a(href = "https://github.com/federicomarini/ideal", "GitHub")
+        "Development of the SeqExpressionAnalyzer package is on ",
+        tags$a(href = "https://github.com/sanaeesskhayry/SeqExpressionAnalyser", "GitHub")
       )
     )
   )
@@ -28,10 +28,10 @@ footer <- function() {
 select_files <- function(session,inputID,inputData){
   fileChoices <- reactive({
     if (is.null(inputData())) {
-      return(c("None"))
+      return(c())
     }
     files <- names(inputData())
-    choices <- c("None")
+    choices <- c()
     for (filename in files) {
       choices <- c(choices, filename)
     }

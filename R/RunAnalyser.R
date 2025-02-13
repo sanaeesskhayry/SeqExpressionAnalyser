@@ -71,6 +71,7 @@ runAnalyser <- function() {
     # Dashboard Body -----------------------------------------------
 
    shinydashboard::dashboardBody(
+     introjsUI(),
       tags$head(
         tags$style(HTML("
                         #myScrollBox{
