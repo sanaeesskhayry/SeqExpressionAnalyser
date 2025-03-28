@@ -1,4 +1,6 @@
-# `SeqExpressionAnalyser` - An interactive R/Bioconductor package for comprehensive differential gene expression analysis of RNA-Seq data
+# `SeqExpressionAnalyser` - An interactive R package for comprehensive differential gene expression analysis of RNA-Seq data
+![SeqExpressionAnalyser Logo](inst/www/app_logo.png)
+
  
 `SeqExpressionAnalyser`is an advanced software package that serves as a web application for interactive and reproducible differential gene expression analysis of RNA-Seq data. This comprehensive tool allows users to easily go through each step of the differential expression analysis workflow: `Reading FASTQ data`, performing `quality control`, `trimming and filtering`, `alignment`, `read counting`, and `differential expression analysis`. All in a user-friendly and supported manner. Each module generates a diverse range of outputs, including detailed data tables, HTML reports, and summary visualizations.
 
