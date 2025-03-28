@@ -19,61 +19,66 @@ The `SeqExpressionAnalyser` package is written in R/Shiny framework and integrat
 
 ## Installation
 
-To install SeqExpressionAnalyser, follow these steps:
+Here is a complete user guide for downloading and installing the **SeqExpressionAnalyser** R package from GitHub using the **devtools** package.
 
-1. **Install R**: Ensure you have R (version >= 4.0) installed on your system.
-2. **Install Bioconductor**: Check for the BiocManager package and install it if it's missing, then use it to install the BiocUpgrade package for updating Bioconductor packages.
-
-    ```R
-    if (!requireNamespace("BiocManager", quietly = TRUE))
-        install.packages("BiocManager")
-    BiocManager::install("BiocUpgrade")
-    ```
-
-3. **Install SeqExpressionAnalyzer**: Install via GitHub, development vertion
-
-    ```R
-    install.packages("devtools")
-    library(devtools)
-    devtools::install_github("sanaeesskhayry/SeqExpressionAnalyser")
-    ```
-
+## Prerequisites
+Before installing the **SeqExpressionAnalyser** package from GitHub, ensure that:
+- You have **R** installed on your system. Download it from [CRAN](https://cran.r-project.org/).
+- You have **RStudio** (optional but recommended) installed. Get it from [RStudio](https://posit.co/download/rstudio-desktop/).
+## Step 1: Install `devtools`
+The `devtools` package allows you to install R packages from GitHub. First, install it from CRAN:
+```r
+install.packages("devtools")
+```
+Then, load the package into your R session:
+```r
+library(devtools)
+```
+## Step 2: Install the SeqExpressionAnalyser Package from GitHub
+To install a package from GitHub, use the `install_github()` function. The syntax is:
+```r
+install_github("sanaeesskhayry/SeqExpressionAnalyser")
+```
+## Step 3: Load the Installed Package
+Once installed, load the package into R using:
+```r
+library(SeqExpressionAnalyser)
+```
+## Step 4: Verify the Installation
+To check if the package is installed correctly, you can:
+- List installed packages:
+  ```r
+  installed.packages()
+  ```
+- Check if the package is available:
+  ```r
+  find.package("SeqExpressionAnalyser")
+  ```
+- Check the package version:
+  ```r
+  packageVersion("SeqExpressionAnalyser")
+  ```
 ## Usage
 
 To start using SeqExpressionAnalyser:
-
 1. Load the package:
-
     ```R
     library(SeqExpressionAnalyser)
     ```
-
 2. Launch the application:
-
     ```R
-    SeqExpressionAnalyser()
+    runAnalyser()
     ```
-
 3. Follow the user-friendly interface to upload your data and navigate through the analysis workflow.
 
 ## Example Workflow
 
-1. Upload your RNA-Seq FASTQ or BAM files.
+1. Upload your RNA-Seq FASTQ files.
 2. Perform quality control and visualize the results, then you can trim and filter low-quality reads.
 3. Map your reads to a reference genome.
 4. Count reads per gene.
 5. Conduct differential expression analysis.
 6. Interpret and visualize results with various plots (e.g., volcano plots, heatmaps).
-
-## Contributing
-
-We welcome contributions! To contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit them (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Create a pull request.
 
 ## License
 
@@ -83,7 +88,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or support, please contact:  
 **Sanae Esskhayry**  
-Email: [sanaeesskhayry01@gmail.com](mailto:sanaeesskhayry01@gmail.com)  
+Email: [sanaeesskhayry@gmail.com](mailto:sanaeesskhayry@gmail.com)  
 GitHub: [sanaeesskhayry](https://github.com/sanaeesskhayry)
 
 ---
