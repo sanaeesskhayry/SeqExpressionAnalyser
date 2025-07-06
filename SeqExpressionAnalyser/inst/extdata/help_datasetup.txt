@@ -1,0 +1,2 @@
+element;intro
+#Welcome;Welcome to <code>SeqExpressionAnalyzer</code> - the Interactive Differential Expression Analysis tool that also enables reproducible analyses! Click on the <code>'Next'</code> button to proceed with the first interactive tour.

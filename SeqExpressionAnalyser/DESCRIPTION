@@ -1,0 +1,45 @@
+Package: SeqExpressionAnalyser
+Title: What the Package Does (One Line, Title Case)
+Version: 0.1
+Authors@R: 
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests: 
+    markdown
+Imports: 
+    Rqc,
+    shiny,
+    DT,
+    shinydashboard,
+    shinyWidgets,
+    shinyalert,
+    shinycssloaders,
+    ggplotify,
+    ggplot2,
+    QuasR,
+    Rsubread,
+    DESeq2,
+    EnhancedVolcano,
+    apeglm,
+    pheatmap,
+    rintrojs,
+    tidyverse,
+    RColorBrewer,
+    dplyr
+Collate: 
+    'Alignement.R'
+    'DEAnalysis.R'
+    'Helpers.R'
+    'Pre-processing_Data.R'
+    'Quality_Control.R'
+    'Quantification.R'
+    'setupData.R'
+    'SeqExpressionAnalyser-package.R'
+    'cal_z_scores.R'
+    'runAnalyser.R'
+    'zzz.R'
